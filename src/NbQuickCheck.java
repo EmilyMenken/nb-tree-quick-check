@@ -12,9 +12,21 @@ public class NbQuickCheck {
    */
   public static void preOrder(Map<Integer, List<Integer>> tree, int root) {
     if(!tree.containsKey(root)) {
-      return;
-    }
-  }
+      return; //does nothing if the tree doesn't contain a root
+    }//end if
+
+  System.out.println(root);
+
+  for(int child : tree.get(root)){
+
+    preOrder(tree, child);
+
+  }//end for
+
+
+  }//end preOrder
+
+
 
   /**
    * Returns the minimum value in the tree.
